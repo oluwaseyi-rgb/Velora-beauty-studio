@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Velora Beauty Studio | Hair, makeup, gele, nails and skin in Lagos</title>
+<meta name="description" content="Velora Beauty Studio in Lekki, Lagos. Braids, silk press, makeup, gele, nails, facials and bridal beauty. Request an appointment online.">
+<meta name="theme-color" content="#2B1030">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Rozha+One&display=swap" rel="stylesheet">
+<style>
+:root{
+  --plum:#2B1030;
+  --wine:#5E1B43;
+  --gold:#E3A53B;
+  --blush:#F6E6DF;
+  --paper:#FBF2ED;
+  --sand:#E8C3B8;
+  --leaf:#1F4A3D;
+  --ink:#24102A;
+  --muted:#6B5570;
+  --display:'Rozha One',Georgia,'Times New Roman',serif;
+  --body:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --wrap:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--body);font-size:1.0625rem;line-height:1.6;color:var(--ink);background:var(--blush)}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.08;margin:0}
+p{margin:0}
+.wrap{width:min(var(--wrap),100% - 2.5rem);margin-inline:auto}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--gold);color:var(--plum);padding:.75rem 1rem;z-index:100}
+.skip:focus{left:1rem;top:1rem}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:48px;padding:.7rem 1.5rem;border-radius:999px;font:600 1rem var(--body);text-decoration:none;border:2px solid transparent;cursor:pointer;transition:background-color .2s,color .2s,border-color .2s}
+.btn-gold{background:var(--gold);color:var(--plum)}
+.btn-gold:hover{background:#F0B84F}
+.btn-line{border-color:rgba(246,230,223,.5);color:var(--blush)}
+.btn-line:hover{border-color:var(--blush);background:rgba(246,230,223,.08)}
+.btn-plum{background:var(--plum);color:var(--blush)}
+.btn-plum:hover{background:var(--wine)}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:50;background:var(--plum);color:var(--blush);border-bottom:1px solid rgba(246,230,223,.12)}
+.bar{display:flex;align-items:center;justify-content:space-between;min-height:68px;gap:1rem}
+.brand{text-decoration:none;display:flex;align-items:baseline;gap:.6rem}
+.brand b{font:400 1.7rem var(--display);letter-spacing:.01em}
+.brand span{font-size:.85rem;color:var(--sand)}
+.nav ul{list-style:none;display:flex;align-items:center;gap:2rem;margin:0;padding:0}
+.nav a{text-decoration:none;font-weight:500;font-size:.98rem;padding:.4rem 0;border-bottom:2px solid transparent}
+.nav a:hover{border-bottom-color:var(--gold)}
+.nav .btn{padding:.45rem 1.25rem;min-height:42px;border-bottom:2px solid transparent}
+.menu-toggle{display:none;background:none;border:0;color:var(--blush);width:48px;height:48px;cursor:pointer;border-radius:8px}
+.menu-toggle span{display:block;width:24px;height:2px;background:currentColor;margin:5px auto;transition:transform .25s,opacity .25s}
+.menu-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.menu-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* Hero */
+.hero{background:var(--plum);color:var(--blush);padding:clamp(2.5rem,6vw,5.5rem) 0 clamp(3.5rem,7vw,6rem);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(2rem,5vw,5rem);align-items:center}
+.hero h1{font-size:clamp(2.8rem,7vw,5.8rem);margin-bottom:1.5rem}
+.hero .lede{max-width:46ch;font-size:clamp(1.05rem,1.6vw,1.25rem);color:var(--sand);margin-bottom:2.25rem}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.9rem;margin-bottom:2.5rem}
+.hero-note{font-size:.95rem;color:var(--sand);border-left:3px solid var(--gold);padding-left:1rem;max-width:42ch}
+.hero-art{position:relative;justify-self:end;width:min(100%,430px)}
+.hero-art::after{content:"";position:absolute;inset:0;border:1.5px solid var(--gold);border-radius:999px 999px 10px 10px;transform:translate(16px,16px);pointer-events:none}
+.arch{position:relative;z-index:1;aspect-ratio:3/4;border-radius:999px 999px 10px 10px;overflow:hidden;background:var(--wine)}
+.arch svg,.arch img{width:100%;height:100%;object-fit:cover}
+.hero .arch{animation:rise 1.2s cubic-bezier(.2,.7,.2,1) both}
+@keyframes rise{from{clip-path:inset(100% 0 0 0)}to{clip-path:inset(0 0 0 0)}}
+
+/* Sections */
+.section{padding:clamp(3.5rem,8vw,7rem) 0}
+.section h2{font-size:clamp(2rem,4.6vw,3.4rem)}
+.section-head{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem 4rem;align-items:end;margin-bottom:clamp(2rem,4vw,3.5rem)}
+.section-head p{color:var(--muted);max-width:48ch}
+
+/* Services */
+.services{background:var(--paper)}
+.menu{display:grid;grid-template-columns:230px 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:start}
+.tabs{display:flex;flex-direction:column;position:sticky;top:100px}
+.tab{background:none;border:0;border-left:3px solid rgba(36,16,42,.15);text-align:left;font:400 1.4rem var(--display);color:var(--muted);padding:.8rem 1rem;cursor:pointer;transition:color .2s,border-color .2s}
+.tab:hover{color:var(--ink)}
+.tab[aria-selected="true"]{color:var(--ink);border-left-color:var(--gold)}
+.panel ul{list-style:none;margin:0;padding:0}
+.item{display:grid;grid-template-columns:1fr auto;gap:.2rem 1.5rem;padding:1.2rem 0;border-bottom:1px solid rgba(36,16,42,.16)}
+.item:first-child{padding-top:0}
+.item h3{font:600 1.1rem var(--body);line-height:1.35}
+.item p{grid-column:1;color:var(--muted);font-size:.97rem;max-width:52ch}
+.price{grid-column:2;grid-row:1/3;align-self:start;font:400 1.35rem var(--display);color:var(--wine);white-space:nowrap}
+.fine{margin-top:1.5rem;font-size:.92rem;color:var(--muted)}
+
+/* Gallery */
+.gallery{background:var(--blush)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem 1.25rem;padding-bottom:2rem}
+.tile{margin:0}
+.tile .arch{background:var(--plum)}
+.tile figcaption{padding-top:.8rem}
+.tile strong{display:block;font-weight:600;font-size:1rem;line-height:1.3}
+.tile span{font-size:.9rem;color:var(--muted)}
+.grid .tile:nth-child(even){transform:translateY(2.25rem)}
+.gallery-foot{margin-top:2.5rem;display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.5rem}
+.gallery-foot p{color:var(--muted)}
+
+/* Studio */
+.studio{background:var(--leaf);color:var(--blush)}
+.studio .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,6vw,6rem);align-items:start}
+.studio h2{margin-bottom:1.5rem}
+.studio .copy p{max-width:54ch;margin-bottom:1.1rem;color:#E4D3CC}
+.quote{margin:2.25rem 0 0;padding:0 0 0 1.25rem;border-left:3px solid var(--gold)}
+.quote p{font:400 1.45rem/1.3 var(--display);color:var(--blush);margin-bottom:.6rem}
+.quote cite{font-style:normal;font-size:.95rem;color:var(--sand)}
+.hours{background:rgba(246,230,223,.07);border:1px solid rgba(246,230,223,.18);border-radius:14px;padding:1.75rem}
+.hours h3{font-size:1.5rem;margin-bottom:1rem}
+.hours dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:.55rem 1.5rem}
+.hours dt{font-weight:600}
+.hours dd{margin:0;text-align:right;color:#E4D3CC}
+.hours address{font-style:normal;margin-top:1.5rem;padding-top:1.25rem;border-top:1px solid rgba(246,230,223,.18);color:#E4D3CC}
+
+/* Booking */
+.book{background:var(--wine);color:var(--blush)}
+.book .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2rem,6vw,6rem);align-items:start}
+.book h2{margin-bottom:1.25rem}
+.book .intro p{max-width:40ch;color:#EBD6D0;margin-bottom:1.5rem}
+.contact-list{list-style:none;margin:0;padding:0;display:grid;gap:.5rem;color:#EBD6D0}
+.contact-list a{text-underline-offset:3px}
+.card{background:var(--blush);color:var(--ink);border-radius:18px;padding:clamp(1.4rem,3vw,2.25rem)}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem 1.1rem}
+.field{display:flex;flex-direction:column;gap:.4rem}
+.field.full{grid-column:1/-1}
+label{font-weight:600;font-size:.95rem}
+input,select,textarea{font:inherit;color:var(--ink);background:#fff;border:1.5px solid rgba(36,16,42,.28);border-radius:10px;padding:.75rem .9rem;min-height:48px;width:100%}
+textarea{min-height:104px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:3px solid var(--gold);outline-offset:1px;border-color:var(--plum)}
+.form .btn{grid-column:1/-1;justify-self:start}
+.help{font-size:.9rem;color:var(--muted)}
+.done{display:none}
+.done.show{display:block}
+.done h3{font-size:1.9rem;margin-bottom:.75rem}
+.done p{margin-bottom:1.25rem;color:var(--muted)}
+.summary{background:#fff;border-radius:10px;padding:1rem 1.1rem;margin-bottom:1.5rem;font-size:.97rem;white-space:pre-line}
+.done-actions{display:flex;flex-wrap:wrap;gap:.8rem}
+.btn-edit{background:none;border:2px solid rgba(36,16,42,.3);color:var(--ink)}
+.btn-edit:hover{border-color:var(--ink)}
+
+/* Footer */
+.site-footer{background:var(--plum);color:var(--sand);padding:3rem 0 2.5rem;font-size:.95rem}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5rem 3rem}
+.foot b{display:block;font:400 1.8rem var(--display);color:var(--blush);margin-bottom:.4rem}
+.foot ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.5rem 1.5rem}
+.foot a{text-underline-offset:3px}
+.legal{margin-top:2rem;padding-top:1.25rem;border-top:1px solid rgba(246,230,223,.14);font-size:.88rem}
+
+/* WhatsApp button */
+.wa{position:fixed;right:1.1rem;bottom:1.1rem;z-index:60;display:flex;align-items:center;gap:.6rem;background:#1FAF5A;color:#fff;text-decoration:none;font-weight:600;padding:.8rem 1.1rem .8rem .9rem;border-radius:999px;box-shadow:0 6px 18px rgba(0,0,0,.28)}
+.wa:hover{background:#18964C}
+.wa svg{width:26px;height:26px;flex:none}
+
+/* Tablet and mobile */
+@media (max-width:980px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .grid .tile:nth-child(even){transform:none}
+  .grid .tile:nth-child(n){transform:none}
+  .grid .tile:nth-child(2n){transform:translateY(1.75rem)}
+  .section-head,.studio .wrap,.book .wrap{grid-template-columns:1fr}
+  .menu{grid-template-columns:1fr;gap:1.5rem}
+  .tabs{position:static;flex-direction:row;overflow-x:auto;border-bottom:1px solid rgba(36,16,42,.16);scrollbar-width:none}
+  .tabs::-webkit-scrollbar{display:none}
+  .tab{border-left:0;border-bottom:3px solid transparent;white-space:nowrap;padding:.7rem 1rem;font-size:1.2rem}
+  .tab[aria-selected="true"]{border-left:0;border-bottom-color:var(--gold)}
+}
+@media (max-width:820px){
+  .menu-toggle{display:block}
+  .nav{position:absolute;left:0;right:0;top:100%;background:var(--plum);border-bottom:1px solid rgba(246,230,223,.12);display:none}
+  .nav.open{display:block}
+  .nav ul{flex-direction:column;align-items:stretch;gap:0;padding:.5rem 1.25rem 1.5rem}
+  .nav li a{display:block;padding:.95rem 0;border-bottom:1px solid rgba(246,230,223,.1)}
+  .nav li:last-child a{margin-top:1rem;border:0;text-align:center}
+  .hero .wrap{grid-template-columns:1fr}
+  .hero-art{justify-self:center;width:min(78%,360px);margin-top:1rem}
+  .brand span{display:none}
+}
+@media (max-width:560px){
+  body{font-size:1rem}
+  .form{grid-template-columns:1fr}
+  .hero-actions .btn{flex:1 1 100%}
+  .wa span{display:none}
+  .wa{padding:.85rem}
+  .item{grid-template-columns:1fr}
+  .price{grid-column:1;grid-row:auto}
+  .hours dl{gap:.45rem 1rem}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero .arch{animation:none}
+  *{transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="Velora Beauty Studio, home">
+      <b>Velora</b><span>Beauty Studio</span>
+    </a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="nav" aria-label="Menu"><span></span><span></span><span></span></button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#studio">Studio</a></li>
+        <li><a class="btn btn-gold" href="#book">Book a visit</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <h1>Unhurried beauty, made in Lagos.</h1>
+      <p class="lede">Hair, makeup, gele, nails and skin, done by a small team who take the time to get it right. Weddings and aso-ebi parties are our speciality.</p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="#book">Request an appointment</a>
+        <a class="btn btn-line" href="#services">See services and prices</a>
+      </div>
+      <p class="hero-note">Open Tuesday to Sunday in Lekki Phase 1. Bridal bookings are taken up to six months ahead.</p>
+    </div>
+    <div class="hero-art">
+      <div class="arch" id="heroArt" role="img" aria-label="Pattern inspired by Nigerian textile geometry, in wine and gold"></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Services and prices</h2>
+      <p>Prices are starting points in naira. We confirm your final quote when we reply, based on length, style and the time it takes.</p>
+    </div>
+
+    <div class="menu">
+      <div class="tabs" role="tablist" aria-label="Service categories">
+        <button class="tab" role="tab" id="tab-hair" aria-controls="panel-hair" aria-selected="true">Hair</button>
+        <button class="tab" role="tab" id="tab-makeup" aria-controls="panel-makeup" aria-selected="false" tabindex="-1">Makeup and gele</button>
+        <button class="tab" role="tab" id="tab-nails" aria-controls="panel-nails" aria-selected="false" tabindex="-1">Nails and skin</button>
+        <button class="tab" role="tab" id="tab-bridal" aria-controls="panel-bridal" aria-selected="false" tabindex="-1">Bridal</button>
+      </div>
+
+      <div>
+        <div class="panel" role="tabpanel" id="panel-hair" aria-labelledby="tab-hair">
+          <ul>
+            <li class="item"><h3>Knotless braids</h3><p>Lightweight, scalp-friendly braids in your chosen length. About 5 to 7 hours.</p><span class="price">₦45,000</span></li>
+            <li class="item"><h3>Cornrows and feed-ins</h3><p>Clean, sharp parting in simple or detailed patterns. About 2 to 4 hours.</p><span class="price">₦25,000</span></li>
+            <li class="item"><h3>Silk press and trim</h3><p>Wash, deep condition, press and a light trim. About 3 hours.</p><span class="price">₦30,000</span></li>
+            <li class="item"><h3>Wig install and styling</h3><p>Bring your own wig. We cut the lace, fit it and style it. About 2 hours.</p><span class="price">₦20,000</span></li>
+            <li class="item"><h3>Loc retwist and style</h3><p>Retwist with a style of your choice. About 3 hours.</p><span class="price">₦28,000</span></li>
+          </ul>
+        </div>
+
+        <div class="panel" role="tabpanel" id="panel-makeup" aria-labelledby="tab-makeup" hidden>
+          <ul>
+            <li class="item"><h3>Soft glam</h3><p>Skin that looks like skin, with defined eyes and lips. About 1 hour.</p><span class="price">₦35,000</span></li>
+            <li class="item"><h3>Full glam</h3><p>Full coverage, sculpting and lashes included. About 1.5 hours.</p><span class="price">₦50,000</span></li>
+            <li class="item"><h3>Gele tying</h3><p>Any style, in your own fabric. Add 30 minutes if you want a trial fold. About 30 minutes.</p><span class="price">₦15,000</span></li>
+            <li class="item"><h3>Makeup lesson</h3><p>Learn a look for your face shape and skin tone, with a written product list. About 90 minutes.</p><span class="price">₦60,000</span></li>
+          </ul>
+        </div>
+
+        <div class="panel" role="tabpanel" id="panel-nails" aria-labelledby="tab-nails" hidden>
+          <ul>
+            <li class="item"><h3>Gel manicure</h3><p>Shape, cuticle care and long-wear gel colour. About 1 hour.</p><span class="price">₦12,000</span></li>
+            <li class="item"><h3>Acrylic set</h3><p>Full set in your length and shape, with simple art. About 2 hours.</p><span class="price">₦25,000</span></li>
+            <li class="item"><h3>Pedicure</h3><p>Soak, scrub, shape and polish. About 1 hour.</p><span class="price">₦15,000</span></li>
+            <li class="item"><h3>Signature facial</h3><p>Deep cleanse, exfoliation, extraction and a hydrating mask. About 75 minutes.</p><span class="price">₦40,000</span></li>
+            <li class="item"><h3>Brow shaping and tint</h3><p>Shaped to your face and tinted to a natural depth. About 30 minutes.</p><span class="price">₦10,000</span></li>
+          </ul>
+        </div>
+
+        <div class="panel" role="tabpanel" id="panel-bridal" aria-labelledby="tab-bridal" hidden>
+          <ul>
+            <li class="item"><h3>Bridal trial</h3><p>Makeup and hair test, so there are no surprises on the day. About 3 hours.</p><span class="price">₦80,000</span></li>
+            <li class="item"><h3>Wedding day, bride</h3><p>Makeup, hair and gele for one look, at the studio or on location in Lagos.</p><span class="price">₦250,000</span></li>
+            <li class="item"><h3>Traditional and white wedding</h3><p>Two complete looks in one day, with a mid-day change.</p><span class="price">₦400,000</span></li>
+            <li class="item"><h3>Bridal party</h3><p>Makeup and gele for bridesmaids and family, priced per person.</p><span class="price">₦60,000</span></li>
+          </ul>
+        </div>
+        <p class="fine">A 30% deposit holds bridal dates. Cancel or move your slot at least 48 hours ahead and we will carry the deposit forward.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section gallery" id="gallery">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Recent work</h2>
+      <p>A few looks from this season, from wedding mornings to quiet weekday appointments.</p>
+    </div>
+    <div class="grid" id="galleryGrid"></div>
+    <div class="gallery-foot">
+      <a class="btn btn-plum" href="https://instagram.com/" target="_blank" rel="noopener">See more on Instagram</a>
+      <p>@velorabeautystudio</p>
+    </div>
+  </div>
+</section>
+
+<!-- STUDIO -->
+<section class="section studio" id="studio">
+  <div class="wrap">
+    <div class="copy">
+      <h2>A small studio, with time for every client.</h2>
+      <p>Velora was started by a makeup artist and a hairstylist who were tired of rushed appointments. We book fewer clients each day so nobody is hurried out of the chair.</p>
+      <p>You will find modern technique here, and a deep respect for the traditions that shape how Nigerian women dress for the biggest days of their lives, from the fold of a gele to the shade of a lip.</p>
+      <blockquote class="quote">
+        <p>Three hours in the chair and I never once felt rushed. My gele sat perfectly until midnight.</p>
+        <cite>Adaeze O., Ikoyi</cite>
+      </blockquote>
+    </div>
+    <div class="hours">
+      <h3>Opening hours</h3>
+      <dl>
+        <dt>Monday</dt><dd>Closed</dd>
+        <dt>Tuesday to Friday</dt><dd>9:00am to 7:00pm</dd>
+        <dt>Saturday</dt><dd>8:00am to 8:00pm</dd>
+        <dt>Sunday</dt><dd>12:00pm to 5:00pm</dd>
+      </dl>
+      <address>
+        14 Admiralty Way, Lekki Phase 1<br>
+        Lagos, Nigeria<br>
+        Free parking behind the building
+      </address>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="section book" id="book">
+  <div class="wrap">
+    <div class="intro">
+      <h2>Request an appointment</h2>
+      <p>Tell us what you would like and when. We reply on WhatsApp within a few hours to confirm your slot.</p>
+      <ul class="contact-list">
+        <li>WhatsApp: <a href="https://wa.me/2348000000000">+234 800 000 0000</a></li>
+        <li>Email: <a href="mailto:hello@velorabeauty.example">hello@velorabeauty.example</a></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <form class="form" id="bookForm" novalidate>
+        <div class="field">
+          <label for="name">Full name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="phone">WhatsApp number</label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="0801 234 5678" required>
+        </div>
+        <div class="field full">
+          <label for="service">Service</label>
+          <select id="service" name="service" required>
+            <option value="">Choose a service</option>
+            <optgroup label="Hair">
+              <option>Knotless braids</option><option>Cornrows and feed-ins</option><option>Silk press and trim</option><option>Wig install and styling</option><option>Loc retwist and style</option>
+            </optgroup>
+            <optgroup label="Makeup and gele">
+              <option>Soft glam</option><option>Full glam</option><option>Gele tying</option><option>Makeup lesson</option>
+            </optgroup>
+            <optgroup label="Nails and skin">
+              <option>Gel manicure</option><option>Acrylic set</option><option>Pedicure</option><option>Signature facial</option><option>Brow shaping and tint</option>
+            </optgroup>
+            <optgroup label="Bridal">
+              <option>Bridal trial</option><option>Wedding day, bride</option><option>Traditional and white wedding</option><option>Bridal party</option>
+            </optgroup>
+          </select>
+        </div>
+        <div class="field">
+          <label for="date">Preferred date</label>
+          <input id="date" name="date" type="date" required>
+        </div>
+        <div class="field">
+          <label for="time">Time of day</label>
+          <select id="time" name="time" required>
+            <option value="">Choose a time</option>
+            <option>Morning, 9am to 12pm</option>
+            <option>Afternoon, 12pm to 4pm</option>
+            <option>Evening, 4pm to 7pm</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label for="notes">Anything we should know? <span class="help">(optional)</span></label>
+          <textarea id="notes" name="notes" placeholder="Event date, hair length, inspiration photos you will send"></textarea>
+        </div>
+        <button class="btn btn-plum" type="submit">Send request</button>
+      </form>
+
+      <div class="done" id="done" role="status" tabindex="-1">
+        <h3>Your request is ready</h3>
+        <p>Send it on WhatsApp and we will confirm your slot as soon as we see it.</p>
+        <div class="summary" id="summary"></div>
+        <div class="done-actions">
+          <a class="btn btn-plum" id="sendWa" href="#" target="_blank" rel="noopener">Send on WhatsApp</a>
+          <button class="btn btn-edit" type="button" id="editBtn">Edit request</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <b>Velora</b>
+        <p>Beauty Studio, Lekki Phase 1, Lagos</p>
+      </div>
+      <ul aria-label="Footer">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#studio">Studio</a></li>
+        <li><a href="#book">Book a visit</a></li>
+      </ul>
+    </div>
+    <p class="legal">Velora Beauty Studio is a fictional business. This website is a concept project.</p>
+  </div>
+</footer>
+
+<a class="wa" id="waFloat" href="https://wa.me/2348000000000?text=Hello%20Velora%2C%20I%27d%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener" aria-label="Chat with Velora on WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16.04 3C9.4 3 4 8.4 4 15.03c0 2.12.55 4.19 1.6 6.01L4 29l8.14-1.56a12 12 0 0 0 3.9.65C22.68 28.09 28 22.69 28 16.06 28 9.4 22.68 3 16.04 3Zm0 22.04c-1.2 0-2.38-.24-3.48-.7l-.5-.2-4.83.93.98-4.7-.22-.5a9.2 9.2 0 0 1-1.2-4.56c0-5.1 4.16-9.25 9.28-9.25 5.1 0 9.25 4.15 9.25 9.25s-4.15 9.73-9.28 9.73Zm5.1-6.9c-.28-.14-1.65-.82-1.9-.9-.26-.1-.45-.14-.64.14-.18.28-.72.9-.88 1.1-.16.18-.32.2-.6.07-.28-.14-1.17-.43-2.23-1.37-.82-.73-1.38-1.64-1.54-1.92-.16-.28-.02-.43.12-.57.13-.12.28-.32.42-.48.14-.16.18-.28.28-.46.1-.2.04-.35-.02-.5-.07-.14-.64-1.53-.87-2.1-.23-.55-.46-.48-.64-.48h-.54c-.18 0-.5.07-.75.35-.26.28-1 .98-1 2.4 0 1.4 1.03 2.77 1.17 2.96.14.18 2.02 3.08 4.9 4.32.68.3 1.22.48 1.64.6.7.22 1.3.2 1.8.12.55-.08 1.65-.67 1.88-1.32.23-.65.23-1.2.16-1.32-.07-.12-.25-.2-.53-.34Z"/></svg>
+  <span>Chat on WhatsApp</span>
+</a>
+
+<script>
+/* ---------- Settings: change these for a real client ---------- */
+const WHATSAPP_NUMBER = "2348000000000"; // country code + number, no plus sign or spaces
+
+/* ---------- Generated textile art (swap for real photos later) ---------- */
+function patternDef(type, id, fg, fg2){
+  switch(type){
+    case 'diamond':
+      return `<pattern id="${id}" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M15 2 28 15 15 28 2 15Z" fill="none" stroke="${fg}" stroke-width="1.6"/><circle cx="15" cy="15" r="2.6" fill="${fg2}"/></pattern>`;
+    case 'rings':
+      return `<pattern id="${id}" width="40" height="40" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="15" fill="none" stroke="${fg}" stroke-width="1.6"/><circle cx="20" cy="20" r="8" fill="none" stroke="${fg2}" stroke-width="1.6"/><circle cx="20" cy="20" r="2.6" fill="${fg}"/></pattern>`;
+    case 'zig':
+      return `<pattern id="${id}" width="36" height="22" patternUnits="userSpaceOnUse"><path d="M0 17 9 5 18 17 27 5 36 17" fill="none" stroke="${fg}" stroke-width="2.2"/><circle cx="18" cy="2" r="1.8" fill="${fg2}"/></pattern>`;
+    case 'weave':
+      return `<pattern id="${id}" width="24" height="24" patternUnits="userSpaceOnUse"><rect width="12" height="12" fill="${fg}"/><rect x="12" y="12" width="12" height="12" fill="${fg}"/><rect x="12" width="12" height="12" fill="${fg2}" opacity=".45"/></pattern>`;
+    default:
+      return `<pattern id="${id}" width="28" height="24" patternUnits="userSpaceOnUse"><path d="M0 24 14 2 28 24Z" fill="none" stroke="${fg}" stroke-width="1.6"/><circle cx="14" cy="17" r="2" fill="${fg2}"/></pattern>`;
+  }
+}
+let artCount = 0;
+function art(o){
+  const id = 'p' + (++artCount);
+  const center = o.center === 'horizon'
+    ? `<rect y="270" width="300" height="130" fill="${o.bg}"/><rect y="270" width="300" height="130" fill="${o.fg2}" opacity=".9"/><path d="M50 270a100 100 0 0 1 200 0Z" fill="${o.bg}"/><path d="M72 270a78 78 0 0 1 156 0Z" fill="${o.fg}"/><path d="M110 270a40 40 0 0 1 80 0Z" fill="${o.bg}"/>`
+    : `<circle cx="150" cy="195" r="88" fill="${o.bg}"/><circle cx="150" cy="195" r="76" fill="${o.fg2}"/><circle cx="150" cy="195" r="54" fill="${o.bg}"/><circle cx="150" cy="195" r="36" fill="${o.fg}"/><circle cx="150" cy="195" r="13" fill="${o.bg}"/>`;
+  return `<svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><defs>${patternDef(o.type,id,o.fg,o.fg2)}</defs><rect width="300" height="400" fill="${o.bg}"/><rect width="300" height="400" fill="url(#${id})"/>${center}</svg>`;
+}
+
+const C = {plum:'#2B1030', wine:'#5E1B43', gold:'#E3A53B', blush:'#F6E6DF', sand:'#E8C3B8', leaf:'#1F4A3D'};
+
+document.getElementById('heroArt').innerHTML = art({type:'diamond', bg:C.wine, fg:C.gold, fg2:C.blush, center:'medallion'});
+
+const looks = [
+  {t:'Bridal glam, soft gold', c:'Makeup', a:{type:'diamond', bg:C.wine, fg:C.gold, fg2:C.blush, center:'medallion'}},
+  {t:'Gele and aso-ebi makeup', c:'Makeup and gele', a:{type:'zig', bg:C.leaf, fg:C.gold, fg2:C.blush, center:'horizon'}},
+  {t:'Knotless braids, waist length', c:'Hair', a:{type:'weave', bg:C.gold, fg:C.plum, fg2:C.wine, center:'medallion'}},
+  {t:'Gel set, mocha chrome', c:'Nails', a:{type:'rings', bg:C.plum, fg:C.gold, fg2:C.blush, center:'horizon'}},
+  {t:'Everyday soft glam', c:'Makeup', a:{type:'tri', bg:C.sand, fg:C.wine, fg2:C.leaf, center:'medallion'}},
+  {t:'Silk press and trim', c:'Hair', a:{type:'diamond', bg:C.leaf, fg:C.blush, fg2:C.gold, center:'medallion'}},
+  {t:'Signature facial, glow finish', c:'Skin', a:{type:'rings', bg:C.sand, fg:C.leaf, fg2:C.wine, center:'horizon'}},
+  {t:'Bridal party, three looks', c:'Bridal', a:{type:'zig', bg:C.wine, fg:C.sand, fg2:C.gold, center:'medallion'}}
+];
+document.getElementById('galleryGrid').innerHTML = looks.map(l =>
+  `<figure class="tile"><div class="arch" role="img" aria-label="${l.t}">${art(l.a)}</div><figcaption><strong>${l.t}</strong><span>${l.c}</span></figcaption></figure>`
+).join('');
+
+/* ---------- Mobile menu ---------- */
+const toggle = document.querySelector('.menu-toggle');
+const nav = document.getElementById('nav');
+toggle.addEventListener('click', () => {
+  const open = nav.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', open);
+});
+nav.addEventListener('click', e => {
+  if (e.target.closest('a')) { nav.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); }
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && nav.classList.contains('open')) { nav.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); toggle.focus(); }
+});
+
+/* ---------- Service tabs ---------- */
+const tabs = [...document.querySelectorAll('.tab')];
+function selectTab(tab, focus){
+  tabs.forEach(t => {
+    const on = t === tab;
+    t.setAttribute('aria-selected', on);
+    t.tabIndex = on ? 0 : -1;
+    document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+  });
+  if (focus) tab.focus();
+}
+tabs.forEach((tab, i) => {
+  tab.addEventListener('click', () => selectTab(tab));
+  tab.addEventListener('keydown', e => {
+    const k = e.key;
+    if (['ArrowRight','ArrowDown'].includes(k)) { e.preventDefault(); selectTab(tabs[(i + 1) % tabs.length], true); }
+    if (['ArrowLeft','ArrowUp'].includes(k)) { e.preventDefault(); selectTab(tabs[(i - 1 + tabs.length) % tabs.length], true); }
+  });
+});
+
+/* ---------- Appointment request ---------- */
+const form = document.getElementById('bookForm');
+const done = document.getElementById('done');
+const dateInput = document.getElementById('date');
+const today = new Date(); today.setMinutes(today.getMinutes() - today.getTimezoneOffset());
+dateInput.min = today.toISOString().split('T')[0];
+
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  if (!form.checkValidity()) { form.reportValidity(); return; }
+  const d = Object.fromEntries(new FormData(form));
+  const niceDate = new Date(d.date + 'T12:00:00').toLocaleDateString('en-NG', {weekday:'long', day:'numeric', month:'long', year:'numeric'});
+  const lines = [
+    'Name: ' + d.name.trim(),
+    'Phone: ' + d.phone.trim(),
+    'Service: ' + d.service,
+    'Date: ' + niceDate,
+    'Time: ' + d.time
+  ];
+  if (d.notes.trim()) lines.push('Notes: ' + d.notes.trim());
+  document.getElementById('summary').textContent = lines.join('\n');
+  const msg = 'Hello Velora, I would like to request an appointment.\n\n' + lines.join('\n');
+  document.getElementById('sendWa').href = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(msg);
+  form.style.display = 'none';
+  done.classList.add('show');
+  done.focus();
+});
+document.getElementById('editBtn').addEventListener('click', () => {
+  done.classList.remove('show');
+  form.style.display = '';
+  document.getElementById('name').focus();
+});
+
+/* Keep the floating button in sync with the settings */
+document.getElementById('waFloat').href = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent("Hello Velora, I'd like to book an appointment.");
+</script>
+</body>
+</html>
